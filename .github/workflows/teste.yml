@@ -19,7 +19,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - run: docker pull node:latest
-    - run: docker tag node:latest acrsampleaction.azurecr.io/teste:v3
+    - run: docker tag node:latest amino.azurecr.io/teste:v2
     - name: Push Image to ACR
       uses: julioarruda/pushimagetoacr@v0
       with:
