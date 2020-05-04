@@ -26,4 +26,4 @@ jobs:
         acr-tokenname: sampleAction
         acr-token: C5ZHny29VbwOXY1O4uWH4/Y4Ahm8bokC
         acr-account: acrsampleaction.azurecr.io
-        acr-imagename: acrsampleaction.azurecr.io/hello-world:v1
+        acr-imagename: acrsampleaction.azurecr.io/hello-world:v2
