@@ -21,7 +21,7 @@ jobs:
     - name: Push Image to ACR
       uses: julioarruda/pushimagetoacr@v0
       with:
-        acr-tokenname: Nome
-        acr-token: Valor
-        acr-account: myregistry.azurecr.io
-        acr-imagename: myregistry.azurecr.io/hello-world:v1
+        acr-tokenname: sampleAction
+        acr-token: C5ZHny29VbwOXY1O4uWH4/Y4Ahm8bokC
+        acr-account: acrsampleaction.azurecr.io
+        acr-imagename: acrsampleaction.azurecr.io/hello-world:v1
