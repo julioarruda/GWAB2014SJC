@@ -19,11 +19,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - run: docker pull node:latest
-    - run: docker tag node:latest myregistry.azurecr.io/hello-world:v2
+    - run: docker tag node:latest acrsampleaction.azurecr.io/teste:v2
     - name: Push Image to ACR
       uses: julioarruda/pushimagetoacr@v0
       with:
-        acr-tokenname: sampleAction
-        acr-token: C5ZHny29VbwOXY1O4uWH4/Y4Ahm8bokC
+        acr-tokenname: ${{ secrets.ACR_TOKEN_NAME }}
+        acr-token: ${{ secrets.ACR_TOKEN }}
         acr-account: acrsampleaction.azurecr.io
-        acr-imagename: acrsampleaction.azurecr.io/hello-world:v2
+        acr-imagename: acrsampleaction.azurecr.io/teste:v2
