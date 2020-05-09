@@ -19,11 +19,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - run: docker pull node:latest
-    - run: docker tag node:latest docker.pkg.github.com/julioarruda/GWAB2014SJC/teste:v2
+    - run: docker tag node:latest docker.pkg.github.com/julioarruda/gwab2014sjc/teste:v2
     - name: Push Image to ACR
       uses: julioarruda/pushimagetoacr@v0
       with:
         acr-tokenname: julioarruda
         acr-token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN_PACKAGES }}
         acr-account: docker.pkg.github.com
-        acr-imagename: docker.pkg.github.com/julioarruda/GWAB2014SJC/teste:v2
+        acr-imagename: docker.pkg.github.com/julioarruda/gwab2014sjc/teste:v2
