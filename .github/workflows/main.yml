@@ -10,19 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo $GITHUB_EVENT_NAME 
-      - run: echo ${{ github.event.comment.body }}
-      - run: echo ${{ github.event.issues.body }}
+      - run: echo $GITHUB_EVENT_COMMENT_BODY
+      
         
-      - name: Turn comment into file
-        run: |
-          ID=${{ github.event.comment.id }}
-          AUTHOR=${{ github.event.comment.user.login }}
-          DATE=${{ github.event.comment.created_at }}
-          COMMENT=$(echo "${{ github.event.comment.body }}")
-          NO_TAGS=${COMMENT//[<>]/\`}
-          FOLDER=comments
-
-          printf '%b\n' "<div class=\"comment\"><p>${AUTHOR} says:</p><p>${NO_TAGS//$'\n'/\<\/p\>\<p\>}</p><p>${DATE}</p></div>\r\n" > ${FOLDER}/${ID}.html
-          
-      - run: cat ${FOLDER}/${ID}.html
       
