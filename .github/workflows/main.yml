@@ -10,10 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo $GITHUB_EVENT_NAME 
-      - run: echo ${{ github.event.client_payload.actor }}
-      
-      - shell: pwsh
-        run: if( github.event.comment.body -eq "Julio") {"Sample"} else {"Not"}
+      - run: echo $GITHUB_ISSUE_COMMENT
+
       
         
       
