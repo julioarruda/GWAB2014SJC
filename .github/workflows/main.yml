@@ -7,11 +7,15 @@ name: Sync issue to Azure DevOps work item
 
 jobs:
   alert:
-    if: contains(github.event.comment.body, 'Julio')
+    
     runs-on: ubuntu-latest
     steps:
       - run: echo $GITHUB_EVENT_NAME 
       - run: echo $GITHUB_ISSUE_COMMENT
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
 
       
         
