@@ -9,14 +9,5 @@ jobs:
   alert:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.event.changes.body.from }}
-      - uses: danhellem/github-actions-issue-to-work-item@master
-        env:
-          ado_token: "${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}"
-          github_token: "${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}"
-          ado_organization: "demoserievideo1"
-          ado_project: "NovoDemo"
-          ado_area_path: "NovoDemo"
-          ado_wit: "Product Backlog Item"
-          ado_new_state: "New"
-          ado_close_state: "Done"
+      - run: echo ${{ github.event.changes.body }}
+      
