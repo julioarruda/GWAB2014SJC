@@ -9,7 +9,7 @@ jobs:
   alert:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.event.changes.body }}
+      - run: echo $GITHUB_EVENT_NAME 
       - run: echo ${{ github.event.comment.body }}
       - run: echo ${{ github.event.issues.body }}
         
