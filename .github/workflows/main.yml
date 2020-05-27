@@ -12,5 +12,8 @@ jobs:
       - run: echo $GITHUB_EVENT_NAME 
       - run: echo ${{ github.event.client_payload.actor }}
       
+      - shell: pwsh
+        run: Write-Host ${{ github.event.comment.body }}
+      
         
       
