@@ -13,7 +13,7 @@ jobs:
       - run: echo ${{ github.event.client_payload.actor }}
       
       - shell: pwsh
-        run: Write-Host ${{ github.event.comment.body }}
+        run: if( ${{ github.event.comment.body }} -eq "Julio") {"Sample"} else {"Not"})
       
         
       
